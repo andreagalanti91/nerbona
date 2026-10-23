@@ -67,16 +67,6 @@ const ACCESSIBLE: Localized = {
   en: "Wheelchair accessible",
 };
 
-/* Le due sedi compaiono come etichetta sopra ogni alloggio. */
-const AT_NERBONA = (it: string, en: string): Localized => ({
-  it: `NERBONA · ${it}`,
-  en: `NERBONA · ${en}`,
-});
-const AT_CASINA = (it: string, en: string): Localized => ({
-  it: `LA CASINA · ${it}`,
-  en: `LA CASINA · ${en}`,
-});
-
 const site: SiteConfig = {
   brand: {
     id: "nerbona",
@@ -292,8 +282,7 @@ const site: SiteConfig = {
           },
         },
       ],
-      guestsLabel: { it: "ospiti", en: "guests" },
-      linkLabel: { it: "Foto e dettagli", en: "Photos and details" },
+      linkLabel: { it: "Scopri", en: "Discover" },
     },
 
     {
@@ -753,31 +742,26 @@ const site: SiteConfig = {
           },
         },
         {
-          type: "stays",
+          type: "stayTabs",
           id: "alloggi",
-          kicker: { it: "GLI ALLOGGI DI NERBONA", en: "APARTMENTS AT NERBONA" },
+          kicker: { it: "Gli alloggi di Nerbona", en: "Apartments at Nerbona" },
           title: {
-            it: "Dal bilocale per due alla villa per otto.",
-            en: "From a one-bedroom for two to a villa for eight.",
+            it: "Dal bilocale per due alla villa per sei.",
+            en: "From a one-bedroom for two to a villa for six.",
           },
-          sizeLabel: { it: "ALLOGGI", en: "UNITS" },
-          guestsLabel: { it: "OSPITI", en: "GUESTS" },
-          linkLabel: { it: "Scopri gli alloggi", en: "See the apartments" },
-          scrollHint: { it: "SCORRI PER ESPLORARE", en: "SCROLL TO EXPLORE" },
-          endCard: {
-            lines: ["NERBONA"],
-            cta: {
-              label: { it: "Verifica disponibilità", en: "Check availability" },
-              href: "#contatti",
+          tabs: [
+            {
+              label: { it: "Nerbona", en: "Nerbona" },
+              stays: [
+                "nerbona-bilocale",
+                "trilocale",
+                "quadrilocale-nerbona",
+                "villa-aia",
+                "camere-nerbona",
+              ],
             },
-          },
-          only: [
-            "nerbona-bilocale",
-            "trilocale",
-            "quadrilocale-nerbona",
-            "villa-aia",
-            "camere-nerbona",
           ],
+          linkLabel: { it: "Scopri", en: "Discover" },
         },
         {
           type: "contact",
@@ -925,25 +909,20 @@ const site: SiteConfig = {
           },
         },
         {
-          type: "stays",
+          type: "stayTabs",
           id: "alloggi",
-          kicker: { it: "GLI ALLOGGI DELLA CASINA", en: "APARTMENTS AT LA CASINA" },
+          kicker: { it: "Gli alloggi della Casina", en: "Apartments at La Casina" },
           title: {
             it: "Cinque case, un solo cortile.",
             en: "Five homes, one courtyard.",
           },
-          sizeLabel: { it: "ALLOGGI", en: "UNITS" },
-          guestsLabel: { it: "OSPITI", en: "GUESTS" },
-          linkLabel: { it: "Scopri gli alloggi", en: "See the apartments" },
-          scrollHint: { it: "SCORRI PER ESPLORARE", en: "SCROLL TO EXPLORE" },
-          endCard: {
-            lines: ["LA", "CASINA"],
-            cta: {
-              label: { it: "Verifica disponibilità", en: "Check availability" },
-              href: "#contatti",
+          tabs: [
+            {
+              label: { it: "La Casina", en: "La Casina" },
+              stays: ["bilocale-casina", "trilocali-casina", "quadrilocale-casina"],
             },
-          },
-          only: ["bilocale-casina", "trilocali-casina", "quadrilocale-casina"],
+          ],
+          linkLabel: { it: "Scopri", en: "Discover" },
         },
         {
           type: "contact",
@@ -1923,7 +1902,7 @@ const site: SiteConfig = {
 
   accommodations: [
     {
-      category: AT_NERBONA("SEI APPARTAMENTI", "SIX APARTMENTS"),
+      category: { it: "SEI APPARTAMENTI", en: "SIX APARTMENTS" },
       slug: "nerbona-bilocale",
       name: "Bilocali",
       size: "6",
@@ -2114,7 +2093,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_NERBONA("CINQUE APPARTAMENTI", "FIVE APARTMENTS"),
+      category: { it: "CINQUE APPARTAMENTI", en: "FIVE APARTMENTS" },
       slug: "trilocale",
       name: "Trilocali",
       size: "5",
@@ -2278,7 +2257,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_NERBONA("QUADRILOCALE", "THREE-BEDROOM"),
+      category: { it: "QUADRILOCALE", en: "THREE-BEDROOM" },
       slug: "quadrilocale-nerbona",
       name: "Mansarda",
       size: "1",
@@ -2333,7 +2312,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_NERBONA("LA VILLA", "THE VILLA"),
+      category: { it: "LA VILLA", en: "THE VILLA" },
       slug: "villa-aia",
       name: "Villa L'Aia",
       size: "1",
@@ -2417,7 +2396,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_NERBONA("DUE CAMERE", "TWO ROOMS"),
+      category: { it: "DUE CAMERE", en: "TWO ROOMS" },
       slug: "camere-nerbona",
       name: "Camere",
       size: "2",
@@ -2501,7 +2480,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_CASINA("BILOCALE", "ONE-BEDROOM"),
+      category: { it: "BILOCALE", en: "ONE-BEDROOM" },
       slug: "bilocale-casina",
       name: "Leccio",
       size: "1",
@@ -2554,7 +2533,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_CASINA("TRE APPARTAMENTI", "THREE APARTMENTS"),
+      category: { it: "TRE APPARTAMENTI", en: "THREE APARTMENTS" },
       slug: "trilocali-casina",
       name: "Trilocali",
       size: "3",
@@ -2663,7 +2642,7 @@ const site: SiteConfig = {
       ],
     },
     {
-      category: AT_CASINA("QUADRILOCALE", "THREE-BEDROOM"),
+      category: { it: "QUADRILOCALE", en: "THREE-BEDROOM" },
       slug: "quadrilocale-casina",
       name: "Quercia",
       size: "1",

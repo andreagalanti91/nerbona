@@ -10,9 +10,12 @@ import { FillImage } from "../Media";
 
 /**
  * Alloggi a schede. Ogni scheda (per esempio una sede) mostra le sue
- * tipologie come card, e sotto ogni card i singoli appartamenti, ciascuno
- * con il collegamento diretto al proprio riquadro nella pagina della
- * tipologia (/trilocale#solaio).
+ * tipologie come card essenziali, in stile editoriale: foto, nome,
+ * collegamento. Piano, camere, appartamenti e posti letto stanno nella
+ * pagina della tipologia, dove servono davvero.
+ *
+ * Con una sola scheda la barra non compare: la sezione diventa un semplice
+ * elenco di card, utile nelle pagine di una singola sede.
  *
  * Le schede seguono lo schema WAI-ARIA dei tab: frecce destra e sinistra
  * per spostarsi, un solo pannello visibile alla volta.
@@ -38,24 +41,26 @@ export function StayTabs({ section }: { section: StayTabsSection }) {
         {section.text && <p>{t(section.text)}</p>}
       </header>
 
-      <div className="stay-tabs-bar" role="tablist">
-        {section.tabs.map((tab, index) => (
-          <button
-            key={index}
-            id={`${section.id}-tab-${index}`}
-            role="tab"
-            type="button"
-            aria-selected={active === index}
-            aria-controls={`${section.id}-panel-${index}`}
-            tabIndex={active === index ? 0 : -1}
-            className={active === index ? "active" : ""}
-            onClick={() => setActive(index)}
-            onKeyDown={onKeyDown}
-          >
-            {t(tab.label)}
-          </button>
-        ))}
-      </div>
+      {section.tabs.length > 1 && (
+        <div className="stay-tabs-bar" role="tablist">
+          {section.tabs.map((tab, index) => (
+            <button
+              key={index}
+              id={`${section.id}-tab-${index}`}
+              role="tab"
+              type="button"
+              aria-selected={active === index}
+              aria-controls={`${section.id}-panel-${index}`}
+              tabIndex={active === index ? 0 : -1}
+              className={active === index ? "active" : ""}
+              onClick={() => setActive(index)}
+              onKeyDown={onKeyDown}
+            >
+              {t(tab.label)}
+            </button>
+          ))}
+        </div>
+      )}
 
       {section.tabs.map((tab, index) => {
         const stays = tab.stays.flatMap((slug) =>
@@ -65,57 +70,37 @@ export function StayTabs({ section }: { section: StayTabsSection }) {
           <div
             key={index}
             id={`${section.id}-panel-${index}`}
-            role="tabpanel"
-            aria-labelledby={`${section.id}-tab-${index}`}
+            role={section.tabs.length > 1 ? "tabpanel" : undefined}
+            aria-labelledby={
+              section.tabs.length > 1 ? `${section.id}-tab-${index}` : undefined
+            }
             hidden={active !== index}
             className="stay-tabs-panel"
           >
             {tab.text && <p className="stay-tabs-intro">{t(tab.text)}</p>}
 
-            <div className="stay-tabs-grid">
+            {/* Il numero di card regola la larghezza della griglia: tre card restano
+                strette e centrate, cinque stanno comunque su una riga. */}
+            <div
+              className="stay-tabs-grid"
+              style={{ "--stay-count": stays.length } as React.CSSProperties}
+            >
               {stays.map((stay) => (
                 <article className="stay-tab-card" key={stay.slug}>
                   <Link href={stayHref(stay.slug)} className="stay-tab-media">
                     <FillImage
                       src={stay.cover}
                       alt={stay.name}
-                      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 20vw"
                     />
                   </Link>
-                  <div className="stay-tab-copy">
-                    <p className="card-meta">{t(stay.category)}</p>
-                    <h3>
-                      <Link href={stayHref(stay.slug)}>{stay.name}</Link>
-                    </h3>
-                    <p className="stay-tab-layout">{t(stay.layout)}</p>
-
-                    {stay.units?.length ? (
-                      <ul>
-                        {stay.units.map((unit) => (
-                          <li key={unit.slug}>
-                            <Link href={`${stayHref(stay.slug)}#${unit.slug}`}>
-                              <span>{unit.name}</span>
-                              {unit.guests && (
-                                <small>
-                                  {unit.guests} {t(section.guestsLabel)}
-                                </small>
-                              )}
-                              <i className="direction-mark" aria-hidden="true" />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="stay-tab-guests">
-                        {stay.guests} {t(section.guestsLabel)}
-                      </p>
-                    )}
-
-                    <Link className="card-link" href={stayHref(stay.slug)}>
-                      <span>{t(section.linkLabel)}</span>
-                      <i className="direction-mark" aria-hidden="true" />
-                    </Link>
-                  </div>
+                  <p className="editorial-kicker">{t(stay.category)}</p>
+                  <h3>
+                    <Link href={stayHref(stay.slug)}>{stay.name}</Link>
+                  </h3>
+                  <Link className="editorial-button" href={stayHref(stay.slug)}>
+                    {t(section.linkLabel)}
+                  </Link>
                 </article>
               ))}
             </div>

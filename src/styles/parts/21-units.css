@@ -3,29 +3,31 @@
    Caricato per ultimo. Usa solo i token di tema. */
 
 /* --- Schede degli alloggi ---------------------------------------- */
+/* Impaginazione editoriale: schede come parole sottolineate, card senza
+   riquadro, foto verticale, nome in maiuscolo, un solo pulsante. */
 
 .stay-tabs {
   padding: clamp(80px, 10vw, 150px) max(5vw, 20px);
-  background: var(--stays-bg);
+  background: var(--paper);
   color: var(--ink);
 }
 
 .stay-tabs-heading {
   max-width: 860px;
-  margin: 0 auto clamp(36px, 5vw, 60px);
+  margin: 0 auto clamp(40px, 5vw, 64px);
   text-align: center;
 }
 
 .stay-tabs-heading h2 {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   font:
-    400 clamp(38px, 5vw, 74px)/1 var(--font-display);
-  letter-spacing: -0.03em;
+    400 clamp(36px, 4.6vw, 68px)/1.02 var(--font-display);
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
 .stay-tabs-heading > p:last-child:not(.editorial-kicker) {
-  max-width: 620px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: 15px;
   line-height: 1.7;
@@ -35,138 +37,117 @@
 .stay-tabs-bar {
   display: flex;
   justify-content: center;
-  gap: 0;
-  width: max-content;
-  max-width: 100%;
-  margin: 0 auto clamp(30px, 4vw, 50px);
-  border: 1px solid var(--ink);
+  gap: clamp(28px, 5vw, 70px);
+  margin: 0 auto clamp(26px, 3vw, 40px);
+  border-bottom: 1px solid var(--line);
 }
 
 .stay-tabs-bar button {
-  min-width: 170px;
-  padding: 16px 28px;
+  position: relative;
+  padding: 0 0 16px;
   border: 0;
-  background: transparent;
-  color: var(--ink);
-  font: 600 11px/1 var(--font-body);
-  letter-spacing: 0.2em;
+  background: none;
+  color: var(--muted-soft);
+  font:
+    400 clamp(26px, 3vw, 40px)/1 var(--font-display);
   text-transform: uppercase;
   cursor: pointer;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
+  transition: color 0.25s ease;
 }
 
-.stay-tabs-bar button + button {
-  border-left: 1px solid var(--ink);
+.stay-tabs-bar button:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
+.stay-tabs-bar button:hover,
 .stay-tabs-bar button.active {
-  background: var(--forest);
-  color: #fff;
+  color: var(--ink);
+}
+
+.stay-tabs-bar button.active:after {
+  transform: scaleX(1);
 }
 
 .stay-tabs-intro {
-  max-width: 640px;
-  margin: 0 auto clamp(30px, 4vw, 50px);
+  max-width: 620px;
+  margin: 0 auto clamp(40px, 5vw, 70px);
   text-align: center;
-  font:
-    400 clamp(20px, 1.8vw, 26px)/1.35 var(--font-display);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
 }
 
 .stay-tabs-grid {
+  --stay-count: 4;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: clamp(16px, 2vw, 28px);
-  max-width: 1500px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(30px, 3vw, 44px) clamp(16px, 1.8vw, 28px);
+  max-width: calc(var(--stay-count) * 310px);
   margin: 0 auto;
 }
 
 .stay-tab-card {
   display: flex;
   flex-direction: column;
-  background: var(--paper);
+  align-items: flex-start;
 }
 
 .stay-tab-media {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 20px;
   overflow: hidden;
 }
 
 .stay-tab-media .cover {
-  transition: transform 0.6s ease;
+  transition: transform 0.8s ease;
 }
 
 .stay-tab-card:hover .stay-tab-media .cover {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-.stay-tab-copy {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 22px 22px 24px;
+.stay-tab-card .editorial-kicker {
+  margin-bottom: 10px;
 }
 
-.stay-tab-copy h3 {
-  margin: 0 0 8px;
-  font:
-    400 clamp(28px, 2.4vw, 36px)/1 var(--font-display);
-}
-
-.stay-tab-layout,
-.stay-tab-guests {
-  margin: 0 0 16px;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-.stay-tab-copy ul {
+.stay-tab-card h3 {
   margin: 0 0 20px;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--line);
-}
-
-.stay-tab-copy li a {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--line);
   font:
-    400 19px/1.1 var(--font-display);
-}
-
-.stay-tab-copy li small {
-  font: 10px var(--font-body);
-  letter-spacing: 0.12em;
+    400 clamp(26px, 2.2vw, 32px)/1.05 var(--font-display);
   text-transform: uppercase;
-  color: var(--muted-soft);
-}
-
-.stay-tab-copy li a:hover span {
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .stay-tabs-more {
-  margin-top: clamp(30px, 4vw, 50px);
+  margin-top: clamp(40px, 5vw, 64px);
   text-align: center;
 }
 
 @media (max-width: 600px) {
-  .stay-tabs-bar {
-    width: 100%;
+  .stay-tabs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 14px;
   }
-  .stay-tabs-bar button {
-    flex: 1;
-    min-width: 0;
-    padding-inline: 10px;
+  .stay-tab-card h3 {
+    font-size: 22px;
+  }
+  .stay-tab-card .editorial-kicker {
+    font-size: 8px;
+    letter-spacing: 0.16em;
+  }
+  .stay-tab-card .editorial-button {
+    padding: 0 14px;
+    min-height: 36px;
   }
 }
 

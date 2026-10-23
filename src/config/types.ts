@@ -394,10 +394,11 @@ export interface GallerySection {
 }
 
 /**
- * Alloggi divisi in schede: una per sede (o per qualsiasi raggruppamento),
- * con le tipologie e i nomi dei singoli appartamenti, ciascuno con il suo
- * collegamento. Alternativa al carosello quando conta far scegliere in
- * fretta più che far sfogliare.
+ * Alloggi divisi in schede: una per sede (o per qualsiasi raggruppamento).
+ * Ogni tipologia è una card essenziale: foto, nome, collegamento; i dettagli
+ * stanno nella sua pagina. Con una sola scheda la barra delle schede non
+ * compare. Alternativa al carosello quando conta far scegliere in fretta
+ * più che far sfogliare.
  */
 export interface StayTabsSection {
   type: "stayTabs";
@@ -413,7 +414,6 @@ export interface StayTabsSection {
     stays: string[];
     link?: { label: Localized; href: string };
   }[];
-  guestsLabel: Localized;
   linkLabel: Localized;
 }
 
