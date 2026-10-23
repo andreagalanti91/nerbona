@@ -264,10 +264,6 @@ const site: SiteConfig = {
             "villa-aia",
             "camere-nerbona",
           ],
-          link: {
-            label: { it: "Aree extra Nerbona", en: "Nerbona extra areas" },
-            href: "/aree-extra-nerbona",
-          },
         },
         {
           label: { it: "La Casina", en: "La Casina" },
@@ -276,10 +272,6 @@ const site: SiteConfig = {
             en: "A kilometre and a half away, beyond the wood: five apartments, a panoramic pool of their own and the portico for dinners. Up to 24 guests.",
           },
           stays: ["bilocale-casina", "trilocali-casina", "quadrilocale-casina"],
-          link: {
-            label: { it: "Aree extra Casina", en: "Casina extra areas" },
-            href: "/aree-extra-casina",
-          },
         },
       ],
       linkLabel: { it: "Scopri", en: "Discover" },
@@ -546,6 +538,11 @@ const site: SiteConfig = {
       },
       gridLabels: { x: "43°22′ N", y: "11°03′ E" },
       homeLabel: { lines: ["Fattoria", "Nerbona"], sub: "Colle di Val d'Elsa" },
+      rings: [
+        { km: 10, label: "10 km" },
+        { km: 25, label: "25 km" },
+        { km: 50, label: "50 km" },
+      ],
       legend: {
         home: "Nerbona",
         destinations: { it: "Destinazioni", en: "Destinations" },
@@ -1676,6 +1673,11 @@ const site: SiteConfig = {
           },
           gridLabels: { x: "43°22′ N", y: "11°03′ E" },
           homeLabel: { lines: ["Fattoria", "Nerbona"], sub: "Colle di Val d'Elsa" },
+          rings: [
+            { km: 10, label: "10 km" },
+            { km: 25, label: "25 km" },
+            { km: 50, label: "50 km" },
+          ],
           legend: {
             home: "Nerbona",
             destinations: { it: "Destinazioni", en: "Destinations" },

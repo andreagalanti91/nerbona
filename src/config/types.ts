@@ -277,16 +277,12 @@ export interface Destination {
   /** Es. "26 km" */
   distance: string;
   /**
-   * Posizione sulla mappa stilizzata, in percentuale del riquadro.
-   * Se omessi vengono calcolati automaticamente dalle coordinate:
-   * vedi `npm run map:calc` per generarli e poi rifinirli a mano.
+   * Posizione sulla mappa, in percentuale del riquadro. Se assente si
+   * calcola dalle coordinate (src/lib/map-geometry.ts): serve solo per
+   * spostare a mano un punto.
    */
   position?: { x: string; y: string };
   coordinates?: { lat: number; lng: number };
-  /** Rotta tratteggiata desktop. Calcolata se assente. */
-  route?: { length: string; angle: string };
-  /** Rotta tratteggiata mobile (il riquadro ha proporzioni diverse). */
-  mobileRoute?: { length: string; angle: string };
 }
 
 /** Sezione 5 — mappa stilizzata delle distanze. */
@@ -301,6 +297,12 @@ export interface TerritorySection {
   /** Coordinate mostrate ai bordi della mappa. */
   gridLabels: { x: string; y: string };
   homeLabel: { lines: string[]; sub: string };
+  /**
+   * Anelli di distanza in linea d'aria attorno alla struttura.
+   * Es. [{ km: 10, label: "10 km" }]. Quelli oltre la località più lontana
+   * non vengono disegnati.
+   */
+  rings?: { km: number; label: string }[];
   legend: {
     home: string;
     destinations: Localized;

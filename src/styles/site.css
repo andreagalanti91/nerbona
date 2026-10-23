@@ -58,3 +58,6 @@
 
 /* 12. Alloggi a schede e pagina con i singoli appartamenti. */
 @import "./parts/21-units.css";
+
+/* 13. Mappa delle distanze radiale. */
+@import "./parts/22-territory.css";

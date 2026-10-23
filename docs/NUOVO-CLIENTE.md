@@ -115,13 +115,17 @@ Se togli una sezione, togli anche la sua voce da `nav`.
 
 ### La mappa del territorio
 
-Per ogni località basta indicare `coordinates`. Posizione sul riquadro e rotta
-tratteggiata vengono calcolate da `src/lib/map-geometry.ts`.
+Per ogni località basta indicare `coordinates`. La mappa è radiale: la
+struttura al centro, ogni località nella sua direzione vera, a una distanza
+proporzionale alla radice quadrata dei chilometri, così i borghi vicini non si
+ammassano attorno al centro. Le etichette si distanziano da sole
+(`src/lib/map-geometry.ts`). `rings` aggiunge gli anelli di distanza, per
+esempio `[{ km: 10, label: "10 km" }]`.
 
-Guarda il risultato: se una località finisce sopra un'altra o troppo vicina al
-bordo, aggiungi `position` per spostarla a mano. In quel caso conviene indicare
-anche `route` e `mobileRoute`, altrimenti la rotta punterà alla posizione
-calcolata e non a quella corretta.
+Accanto alla mappa compare l'elenco delle località ordinate per distanza.
+
+Guarda il risultato su desktop e su telefono: se una località resta scomoda,
+aggiungi `position` per spostarla a mano.
 
 Le coordinate si prendono da Google Maps: tasto destro sul punto, il primo
 valore del menù è `lat, lng`.

@@ -225,9 +225,9 @@ const site: SiteConfig = {
         },
       },
 
-      /* Basta indicare `coordinates`: posizione sulla mappa e rotta si
-         calcolano da sole. Se il risultato ti convince poco, aggiungi
-         `position`, `route` e `mobileRoute` per rifinire a mano. */
+      /* Basta indicare `coordinates`: la posizione sulla mappa si calcola da
+         sola. Se il risultato ti convince poco, aggiungi `position` per
+         rifinire a mano. */
       items: [
         {
           id: "todo-citta",

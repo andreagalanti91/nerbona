@@ -203,7 +203,11 @@ interne (`/servizi`) o indirizzi esterni. Li gestisce `SmartLink` in
 Una voce di `nav` punta a una sezione della homepage (`target`), a una pagina
 (`page`) o a un indirizzo qualsiasi (`href`, per esempio la pagina di un
 alloggio), e può avere un sottomenù (`children`). Una voce senza indirizzo fa
-solo da intestazione del sottomenù. Dalle pagine interne le voci
+solo da intestazione del sottomenù.
+
+Quando si scende oltre l'header e si torna a scorrere verso l'alto, l'header
+ricompare fissato in cima alla finestra (`SiteHeader`, classi `is-floating` e
+`is-shown`); scendendo si nasconde di nuovo. Dalle pagine interne le voci
 con `target` diventano `/#sezione`: i componenti sanno in che pagina si
 trovano con `useIsHome()`.
 

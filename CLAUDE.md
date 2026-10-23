@@ -34,7 +34,7 @@ tenants/<id>/theme.css    colori e font del cliente (font in tenants/<id>/fonts/
 public/tenants/<id>/      foto e video del cliente
 src/config/types.ts       lo schema: cosa può cambiare da cliente a cliente
 src/components/sections/  una sezione della homepage per file
-src/styles/parts/         il CSS, in 21 blocchi
+src/styles/parts/         il CSS, in 22 blocchi
 app/                      rotte Next, sottili
 ```
 
