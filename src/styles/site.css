@@ -1,0 +1,60 @@
+/* FOGLIO DI STILE PRINCIPALE
+   ==========================
+   Unico punto in cui si stabilisce l'ordine di caricamento.
+
+   L'ORDINE È SIGNIFICATIVO. Il CSS di questo sito è stato scritto a strati
+   successivi: prima l'impianto generale, poi la riscrittura delle singole
+   sezioni, poi tre giri di rifiniture. Diverse regole dei file "refinements"
+   sovrascrivono di proposito regole dei file precedenti. Spostare un @import
+   più in alto o più in basso può cambiare il risultato a schermo.
+
+   Se devi aggiungere stile nuovo, mettilo in fondo, oppure crea un file
+   proprio e importalo per ultimo. */
+
+/* 1. Tema: colori e font. Prima di tutto, così il resto può usarli. */
+@import "./tokens.css";
+
+/* 2. Fondamenta */
+@import "./parts/01-base.css";
+
+/* 3. Apertura e navigazione */
+@import "./parts/02-hero-media.css";
+@import "./parts/03-header.css";
+@import "./parts/04-hero-copy.css";
+
+/* 4. Blocchi a tutta larghezza e pagine interne */
+@import "./parts/05-blocks.css";
+@import "./parts/06-stay-page.css";
+
+/* 5. Sezioni animate */
+@import "./parts/07-story.css";
+@import "./parts/08-stays.css";
+@import "./parts/09-experiences.css";
+@import "./parts/10-territory.css";
+
+/* 6. Adattamenti a tablet e telefono */
+@import "./parts/11-responsive.css";
+
+/* 7. Elementi flottanti e icone condivise */
+@import "./parts/12-contact-dock.css";
+@import "./parts/13-refinements-content.css";
+@import "./parts/14-icons.css";
+@import "./parts/15-refinements-media.css";
+
+/* 8. Pagine legali e ultime rifiniture mobile */
+@import "./parts/16-legal.css";
+@import "./parts/17-refinements-mobile.css";
+
+/* 9. Sezioni aggiunte dopo il progetto iniziale.
+      In coda per non disturbare la cascata di quanto precede. */
+@import "./parts/18-menu-gallery.css";
+
+/* 10. Siti multipagina: sottomenù, pagine interne, schede, recensioni.
+       In coda per la stessa ragione del blocco precedente. */
+@import "./parts/19-pages.css";
+
+/* 11. Impaginazione editoriale delle pagine interne. */
+@import "./parts/20-editorial.css";
+
+/* 12. Alloggi a schede e pagina con i singoli appartamenti. */
+@import "./parts/21-units.css";

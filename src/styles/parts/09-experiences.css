@@ -1,0 +1,237 @@
+/* Card esperienze impilate, testo scorrevole, luce al mouse.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+.exp-stage {
+  position: relative;
+  background: var(--exp-bg);
+  color: #fff;
+}
+
+.exp-intro {
+  position: relative;
+  display: flex;
+  min-height: 92svh;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8vw 6vw;
+  overflow: hidden;
+  background: var(--exp-intro-bg);
+}
+
+.exp-kicker {
+  margin-bottom: 28px;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--exp-kicker);
+}
+
+.exp-intro h2 {
+  max-width: 1050px;
+  margin-bottom: 30px;
+  font:
+    400 clamp(70px, 9vw, 145px)/0.82 var(--font-display);
+  letter-spacing: -0.07em;
+}
+
+.exp-intro > p:not(.exp-kicker) {
+  max-width: 470px;
+  margin-left: 32vw;
+  font:
+    17px/1.6 var(--font-display);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.exp-marquee {
+  position: absolute;
+  right: 0;
+  bottom: 2vh;
+  left: 0;
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  font:
+    italic clamp(55px, 7vw, 110px)/1 var(--font-display);
+  color: rgba(255, 255, 255, 0.055);
+  animation: exp-marquee 24s linear infinite;
+}
+
+.exp-marquee span {
+  display: block;
+}
+
+@keyframes exp-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.exp-stack {
+  position: relative;
+}
+
+.exp-card {
+  --exp-x: 50%;
+  --exp-y: 50%;
+  --exp-dx: 0px;
+  --exp-dy: 0px;
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.exp-card-1 {
+  background: var(--exp-card-1);
+}
+
+.exp-card-2 {
+  background: var(--exp-card-2);
+}
+
+.exp-card-3 {
+  background: var(--exp-card-3);
+}
+
+.exp-media,
+.exp-veil,
+.exp-light {
+  position: absolute;
+  inset: 0;
+}
+
+.exp-media {
+  overflow: hidden;
+}
+
+.exp-media .cover {
+  object-position: center;
+  transform: scale(1.07) translate3d(var(--exp-dx), var(--exp-dy), 0);
+  transition: transform 0.18s ease-out;
+  filter: saturate(0.88) contrast(1.06);
+}
+
+.exp-card-2 .exp-media .cover {
+  object-position: center 58%;
+}
+
+.exp-card-3 .exp-media .cover {
+  object-position: center 48%;
+}
+
+.exp-veil {
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 10, 7, 0.78) 0%,
+      rgba(9, 10, 7, 0.34) 52%,
+      rgba(9, 10, 7, 0.12) 100%
+    ),
+    linear-gradient(0deg, rgba(8, 8, 6, 0.72), transparent 52%);
+}
+
+.exp-light {
+  z-index: 2;
+  background: radial-gradient(
+    circle 230px at var(--exp-x) var(--exp-y),
+    rgba(216, 225, 168, 0.16),
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.exp-word {
+  position: absolute;
+  z-index: 2;
+  top: 13%;
+  right: -1vw;
+  font:
+    italic clamp(100px, 17vw, 270px)/0.8 var(--font-display);
+  letter-spacing: -0.07em;
+  color: rgba(255, 255, 255, 0.09);
+  user-select: none;
+}
+
+.exp-top {
+  position: absolute;
+  z-index: 3;
+  top: 5.5%;
+  right: 5vw;
+  left: 5vw;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.exp-copy {
+  position: absolute;
+  z-index: 3;
+  bottom: 8%;
+  left: 6vw;
+  max-width: 680px;
+}
+
+.exp-copy > p:first-child {
+  margin-bottom: 18px;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: var(--exp-accent);
+}
+
+.exp-copy h3 {
+  margin-bottom: 22px;
+  font:
+    400 clamp(66px, 8vw, 125px)/0.84 var(--font-display);
+  letter-spacing: -0.065em;
+}
+
+.exp-copy > p:nth-of-type(2) {
+  max-width: 500px;
+  margin-bottom: 30px;
+  font:
+    16px/1.6 var(--font-display);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.exp-copy > a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.exp-copy > a span {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.exp-copy > a i {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--exp-accent);
+  color: var(--exp-on-accent);
+  font-style: normal;
+  font-size: 16px;
+  transition: transform 0.25s;
+}
+
+.exp-copy > a:hover i {
+  transform: rotate(-45deg);
+}

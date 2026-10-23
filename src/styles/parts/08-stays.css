@@ -1,0 +1,273 @@
+/* Carosello orizzontale delle sistemazioni.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+.stays-journey {
+  --stay-progress: 0;
+  position: relative;
+  background: var(--stays-bg);
+  color: var(--ink);
+}
+
+.stays-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.stays-heading {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 4.2vh 5vw 2.6vh;
+  background: linear-gradient(180deg, var(--stays-bg) 72%, var(--stays-bg-fade));
+  pointer-events: none;
+}
+
+.stays-heading p {
+  margin: 0 0 9px;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+.stays-heading h2 {
+  max-width: 680px;
+  margin: 0;
+  font:
+    400 clamp(31px, 3.5vw, 55px)/0.98 var(--font-display);
+  letter-spacing: -0.045em;
+}
+
+.stays-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stays-count b {
+  font:
+    400 46px var(--font-display);
+}
+
+.stays-count span {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.stays-track {
+  position: absolute;
+  top: 24%;
+  left: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 6vw;
+  width: max-content;
+  height: 64%;
+  padding: 0 5vw;
+  will-change: transform;
+}
+
+.stay-chapter {
+  display: grid;
+  grid-template-columns: minmax(520px, 1.5fr) minmax(280px, 0.62fr);
+  gap: 4vw;
+  width: 82vw;
+  height: 100%;
+}
+
+.stay-chapter-media {
+  position: relative;
+  height: 100%;
+}
+
+.stay-chapter-main {
+  position: absolute;
+  inset: 0 15% 0 0;
+  margin: 0;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.stay-chapter-main .cover {
+  transform: scale(1.015);
+  transition: transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stay-chapter:hover .stay-chapter-main .cover {
+  transform: scale(1.055);
+}
+
+.stay-chapter-detail {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: -4%;
+  width: 38%;
+  height: 44%;
+  margin: 0;
+  border: 8px solid var(--stays-bg);
+  overflow: hidden;
+}
+
+.stay-chapter-number {
+  position: absolute;
+  z-index: 3;
+  top: 15px;
+  left: 18px;
+  color: white;
+  font:
+    italic 20px var(--font-display);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stay-chapter-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2vh 0;
+}
+
+.stay-type {
+  margin-bottom: 16px;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: var(--muted-soft);
+}
+
+.stay-chapter-copy h3 {
+  margin-bottom: 20px;
+  font:
+    400 clamp(42px, 4.4vw, 70px)/0.9 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.stay-description {
+  max-width: 370px;
+  margin-bottom: 28px;
+  font:
+    15px/1.6 var(--font-display);
+  color: var(--muted);
+}
+
+.stay-facts {
+  display: flex;
+  gap: 36px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stay-facts span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stay-facts small {
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  color: var(--muted-soft);
+}
+
+.stay-facts b {
+  font:
+    400 25px var(--font-display);
+}
+
+.stay-layout {
+  margin: 18px 0 27px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stay-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 310px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stay-link i {
+  font-style: normal;
+  font-size: 15px;
+  transition: transform 0.25s;
+}
+
+.stay-link:hover i {
+  transform: rotate(45deg);
+}
+
+.stays-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 52vw;
+  height: 100%;
+  padding-right: 5vw;
+  text-align: center;
+}
+
+.stays-end p {
+  margin-bottom: 35px;
+  font:
+    400 clamp(55px, 7vw, 105px)/0.76 var(--font-display);
+  letter-spacing: -0.06em;
+}
+
+.stays-end a {
+  padding-bottom: 7px;
+  border-bottom: 1px solid;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.stays-progress {
+  position: absolute;
+  z-index: 7;
+  right: 5vw;
+  bottom: 3.1vh;
+  left: 5vw;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stays-progress i {
+  position: relative;
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: rgba(23, 35, 28, 0.2);
+}
+
+.stays-progress i:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: scaleX(var(--stay-progress));
+  transform-origin: left;
+}
+
+.stays-progress span {
+  font-size: 7px;
+  letter-spacing: 0.15em;
+}

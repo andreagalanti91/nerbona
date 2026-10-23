@@ -1,0 +1,180 @@
+/* Sezioni aggiunte per la ristorazione: menù, galleria in homepage, orari.
+   Caricato per ultimo, quindi non può disturbare la cascata esistente.
+   Usa gli stessi token di tema del resto del sito. */
+
+/* --- Menù --------------------------------------------------------- */
+
+.menu-stage {
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(80px, 12vw, 160px) 6vw;
+}
+
+.menu-intro {
+  max-width: 760px;
+  margin: 0 auto clamp(48px, 7vw, 90px);
+  text-align: center;
+}
+
+.menu-intro h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 5vw, 54px);
+  line-height: 1.06;
+  margin: 14px 0 18px;
+}
+
+.menu-intro p:last-child {
+  opacity: 0.7;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.menu-courses {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(40px, 6vw, 72px);
+}
+
+@media (min-width: 900px) {
+  .menu-courses {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.menu-course h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(20px, 2.4vw, 26px);
+  margin: 0 0 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-course-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.menu-course ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.menu-course li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(23, 35, 28, 0.08);
+}
+
+.menu-dish {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.menu-dish b {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.menu-dish small {
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.55;
+}
+
+/* Il prezzo resta allineato a destra e non va mai a capo. */
+.menu-price {
+  font-family: var(--font-display);
+  font-size: 17px;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.menu-documents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: clamp(48px, 7vw, 80px);
+}
+
+/* --- Galleria in homepage ----------------------------------------- */
+
+/* La griglia arriva già da .detail-gallery: qui si aggiunge solo lo spazio
+   verticale che dentro una pagina interna arriva dal contesto. */
+.gallery-section {
+  padding-top: clamp(80px, 12vw, 150px);
+  padding-bottom: clamp(80px, 12vw, 150px);
+}
+
+.gallery-section .gallery-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4.5vw, 48px);
+  line-height: 1.08;
+  margin: 12px 0 0;
+}
+
+.gallery-section .gallery-text {
+  max-width: 60ch;
+  margin: 16px 0 0;
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+/* --- Orari di apertura -------------------------------------------- */
+
+.contact-hours {
+  margin: 34px 0 6px;
+  padding: 22px 24px;
+  border: 1px solid rgba(242, 238, 228, 0.22);
+}
+
+.contact-hours > p {
+  margin: 0 0 14px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.contact-hours dl {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.contact-hours dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+}
+
+.contact-hours dt {
+  opacity: 0.75;
+}
+
+.contact-hours dd {
+  margin: 0;
+  font-family: var(--font-display);
+  white-space: nowrap;
+}
+
+.contact-hours small {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.5;
+}

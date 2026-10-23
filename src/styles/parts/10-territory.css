@@ -1,0 +1,267 @@
+/* Mappa stilizzata delle distanze.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+.territory-map {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: center;
+  gap: 7vw;
+  min-height: 100svh;
+  padding: 9vw 5vw;
+  background: var(--territory-bg);
+}
+
+.territory-copy h2 {
+  max-width: 610px;
+  margin-bottom: 30px;
+  font:
+    400 clamp(50px, 5.2vw, 80px)/0.96 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.territory-copy > p:not(.eyebrow) {
+  max-width: 480px;
+  margin-bottom: 48px;
+  font:
+    16px/1.7 var(--font-display);
+  color: var(--muted);
+}
+
+.territory-copy > span {
+  font-size: 7px;
+  letter-spacing: 0.18em;
+}
+
+.map-canvas {
+  position: relative;
+  aspect-ratio: 1.25;
+  overflow: hidden;
+  background: var(--panel);
+  color: #f5f1e7;
+  box-shadow: 0 30px 70px rgba(25, 43, 33, 0.18);
+}
+
+.map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 8% 10%;
+}
+
+.map-silhouette {
+  position: absolute;
+  inset: 5%;
+  clip-path: polygon(
+    40% 2%,
+    60% 7%,
+    72% 21%,
+    68% 34%,
+    82% 47%,
+    76% 62%,
+    67% 69%,
+    70% 83%,
+    56% 97%,
+    42% 87%,
+    35% 71%,
+    23% 64%,
+    17% 48%,
+    27% 35%,
+    24% 19%
+  );
+  background: linear-gradient(
+    150deg,
+    rgba(198, 218, 153, 0.14),
+    rgba(198, 218, 153, 0.035)
+  );
+  border: 1px solid rgba(198, 218, 153, 0.12);
+}
+
+.map-coordinate {
+  position: absolute;
+  font-size: 7px;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+.map-coordinate-x {
+  top: 6%;
+  left: 5%;
+}
+
+.map-coordinate-y {
+  right: 3%;
+  bottom: 28%;
+  transform: rotate(90deg);
+}
+
+.map-route {
+  position: absolute;
+  z-index: 2;
+  top: 46%;
+  left: 45%;
+  height: 1px;
+  border-top: 1px dashed rgba(201, 220, 158, 0.48);
+  transform-origin: left center;
+}
+
+.map-route i {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 12px var(--lime);
+  animation: map-travel 4s ease-in-out infinite;
+}
+
+@keyframes map-travel {
+  0%,
+  15% {
+    left: 0;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  90%,
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.map-home,
+.map-place {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.map-home {
+  top: 46%;
+  left: 45%;
+  transform: translate(-7px, -7px);
+}
+
+.map-home > i {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--lime);
+  border-radius: 50%;
+  background: var(--panel);
+  box-shadow: 0 0 0 8px rgba(200, 219, 154, 0.13);
+}
+
+.map-home > i:after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 1px solid rgba(200, 219, 154, 0.48);
+  border-radius: 50%;
+  animation: map-pulse 2.2s ease-out infinite;
+}
+
+@keyframes map-pulse {
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.map-home span,
+.map-place span {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-home b {
+  font:
+    400 15px/1.05 var(--font-display);
+}
+
+.map-home small,
+.map-place small {
+  margin-top: 4px;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.map-place > i {
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--lime);
+  border-radius: 50%;
+  background: var(--panel);
+}
+
+.map-place b {
+  font:
+    400 clamp(13px, 1.35vw, 20px) var(--font-display);
+}
+
+.map-place small {
+  color: var(--lime);
+}
+
+.map-key {
+  position: absolute;
+  right: 4%;
+  bottom: 4%;
+  left: 4%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.map-key span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-key span i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.map-key span:nth-child(2) i {
+  background: transparent;
+  border: 1px solid var(--lime);
+}
+
+.map-key > small {
+  margin-left: auto;
+  font-size: 6px;
+  letter-spacing: 0.1em;
+}
+
+.hero-video-local {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.025);
+  filter: saturate(0.95) contrast(1.04);
+}

@@ -1,0 +1,260 @@
+/* Pulsante contatti fisso e pannello a scomparsa.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+.contact-dock {
+  position: fixed;
+  z-index: 70;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  color: var(--ink);
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.contact-dock.is-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+}
+
+.contact-dock-trigger {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 218px;
+  padding: 11px 12px 11px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  background: var(--dock-bg);
+  color: #fff;
+  box-shadow: 0 16px 42px rgba(8, 18, 13, 0.24);
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.contact-dock-trigger:hover {
+  transform: translateY(-2px);
+  background: var(--forest-hover);
+}
+
+.contact-dock-trigger > span:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-dock-trigger small {
+  font-size: 6px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.contact-dock-trigger b {
+  font:
+    400 19px/1.1 var(--font-display);
+}
+
+.contact-dock-trigger > i {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-style: normal;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.contact-dock.open .contact-dock-trigger > i {
+  transform: rotate(90deg);
+}
+
+.contact-dock-pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 5px rgba(205, 226, 158, 0.09);
+}
+
+.contact-dock-pulse:after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid rgba(205, 226, 158, 0.55);
+  border-radius: 50%;
+  animation: contact-pulse 2.2s ease-out infinite;
+}
+
+@keyframes contact-pulse {
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.contact-dock-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  width: 336px;
+  padding: 27px;
+  background: var(--dock-panel);
+  color: var(--ink);
+  box-shadow: 0 25px 70px rgba(8, 18, 13, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.975);
+  transform-origin: right bottom;
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.contact-dock.open .contact-dock-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.contact-dock-panel > p {
+  margin: 0 0 18px;
+  font-size: 7px;
+  letter-spacing: 0.2em;
+  color: var(--muted-soft);
+}
+
+.contact-dock-panel h2 {
+  max-width: 250px;
+  margin: 0 0 12px;
+  font:
+    400 35px/0.95 var(--font-display);
+  letter-spacing: -0.045em;
+}
+
+.contact-dock-panel > span {
+  display: block;
+  max-width: 255px;
+  margin-bottom: 24px;
+  font:
+    13px/1.5 var(--font-display);
+  color: var(--muted);
+}
+
+.contact-dock-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(20, 39, 30, 0.08);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-dock-options {
+  border-top: 1px solid rgba(23, 35, 28, 0.16);
+}
+
+.contact-dock-options a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(23, 35, 28, 0.16);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-dock-options i {
+  font-style: normal;
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.contact-dock-options a:hover i {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 800px) {
+body {
+    padding-bottom: 78px;
+  }
+.contact-dock {
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    left: 12px;
+  }
+.contact-dock-trigger {
+    width: 100%;
+    min-width: 0;
+    min-height: 58px;
+    padding: 10px 11px 10px 15px;
+  }
+.contact-dock-trigger b {
+    font-size: 18px;
+  }
+.contact-dock-trigger > i {
+    width: 38px;
+    height: 38px;
+  }
+.contact-dock-panel {
+    right: 0;
+    left: 0;
+    bottom: calc(100% + 9px);
+    width: auto;
+    max-height: calc(100svh - 102px);
+    padding: 24px 22px;
+    overflow: auto;
+    transform-origin: center bottom;
+  }
+.contact-dock-panel h2 {
+    font-size: 32px;
+  }
+.contact-dock-panel > span {
+    margin-bottom: 18px;
+  }
+.contact-dock-options a {
+    padding: 13px 0;
+  }
+.exp-copy {
+    bottom: 19%;
+  }
+.territory-map {
+    padding-bottom: 140px;
+  }
+.contact-copy {
+    padding-bottom: 130px;
+  }
+.stays-end {
+    overflow: hidden;
+  }
+.stays-end p {
+    max-width: 100%;
+    font-size: 15.5vw;
+  }
+footer {
+    padding-bottom: 52px;
+  }
+}

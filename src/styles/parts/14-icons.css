@@ -1,0 +1,176 @@
+/* Frecce e croci disegnate in CSS, condivise da più componenti.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+.direction-mark {
+  display: inline-block;
+  width: 15px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: currentColor;
+  font-size: 0;
+  opacity: 0.8;
+}
+
+.close-mark {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.close-mark:before,
+.close-mark:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 1px;
+  width: 12px;
+  height: 1px;
+  background: currentColor;
+}
+
+.close-mark:before {
+  transform: rotate(45deg);
+}
+
+.close-mark:after {
+  transform: rotate(-45deg);
+}
+
+.button {
+  gap: 14px;
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-dock-trigger > i .direction-mark,
+.contact-dock-trigger > i .close-mark,
+.hero-discover i .direction-mark,
+.exp-copy > a i .direction-mark {
+  margin: auto;
+}
+
+.stays-end a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+.stays-journey {
+    padding: 82px 0 54px;
+  }
+.stays-heading {
+    align-items: flex-end;
+    padding: 0 18px 42px;
+  }
+.stays-heading > div:first-child {
+    min-width: 0;
+  }
+.stays-heading h2 {
+    max-width: 100%;
+    font-size: 11.5vw;
+    line-height: 0.95;
+  }
+.stays-count {
+    position: static;
+    display: flex;
+    flex: 0 0 auto;
+    padding: 0 0 5px 12px;
+    background: none;
+    backdrop-filter: none;
+  }
+.stays-count b {
+    font-size: 29px;
+  }
+.stays-count span {
+    font-size: 8px;
+  }
+.stays-track {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 14px;
+    padding: 0 18px 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 18px;
+    overscroll-behavior-inline: contain;
+    touch-action: pan-x pan-y;
+    -webkit-overflow-scrolling: touch;
+    transform: none !important;
+    will-change: auto;
+  }
+.stays-track::-webkit-scrollbar {
+    display: none;
+  }
+.stay-chapter {
+    display: flex;
+    flex: 0 0 82vw;
+    width: auto;
+    height: auto;
+    margin: 0;
+    flex-direction: column;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+.stay-chapter-media {
+    height: 58svh;
+    min-height: 455px;
+    margin-bottom: 34px;
+  }
+.stay-chapter-main {
+    right: 7%;
+  }
+.stay-chapter-detail {
+    width: 42%;
+    height: 31%;
+  }
+.stay-chapter-copy {
+    padding: 0 4px 12px;
+  }
+.stay-chapter-copy h3 {
+    font-size: 14vw;
+  }
+.stay-description {
+    min-height: 74px;
+    margin-bottom: 22px;
+  }
+.stay-facts {
+    padding: 15px 0;
+  }
+.stay-layout {
+    min-height: 20px;
+    margin: 16px 0 22px;
+  }
+.stays-end {
+    flex: 0 0 74vw;
+    width: auto;
+    min-height: 72svh;
+    height: auto;
+    padding: 0 18px;
+    scroll-snap-align: start;
+  }
+.stays-end p {
+    font-size: 15vw;
+  }
+.stays-progress {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    margin: 12px 18px 0;
+  }
+.stays-progress span {
+    white-space: nowrap;
+  }
+}

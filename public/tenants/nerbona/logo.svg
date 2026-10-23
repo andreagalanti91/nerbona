@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Fattoria Nerbona">
+  <defs>
+    <mask id="m">
+      <circle cx="60" cy="60" r="50" fill="#fff"/>
+      <path d="M10 104C40 94 80 94 110 104" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#F1DDBC" stroke-width="2.5"/>
+  <g mask="url(#m)" fill="#F1DDBC">
+    <circle cx="83" cy="36" r="7"/>
+    <path d="M42 46C48.6 61.2 49.2 78.8 42 86C34.8 78.8 35.4 61.2 42 46Z"/>
+    <path d="M57 32C64.7 51.8 65.4 74.6 57 84C48.6 74.6 49.3 51.8 57 32Z"/>
+    <path d="M72 51C78.0 63.9 78.6 78.9 72 85C65.4 78.9 66.0 63.9 72 51Z"/>
+    <path d="M4 92C30 80 52 78 70 82S104 92 116 86V120H4Z"/>
+  </g>
+</svg>

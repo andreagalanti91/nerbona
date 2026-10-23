@@ -1,0 +1,21 @@
+/* TEMA — NOME CLIENTE
+   ==================
+   Sovrascrive i valori di partenza definiti in src/styles/tokens.css.
+   Viene caricato dopo, quindi vince.
+
+   Scommenta e modifica solo le righe che ti servono: ricolorare l'intero
+   sito significa riscrivere queste poche righe. */
+
+:root {
+  /* --ink: #17231c;        testo e sfondi scuri   */
+  /* --forest: #183026;                            */
+  /* --deep: #10241b;                              */
+  /* --panel: #14271e;      riquadri scuri         */
+  /* --cream: #f2eee4;      sfondi chiari          */
+  /* --paper: #fbf8f1;                             */
+  /* --lime: #c8db9a;       colore d'accento       */
+  /* --line: rgba(23, 35, 28, 0.18);  filetti      */
+
+  /* --font-display: "Playfair Display", Georgia, serif; */
+  /* --font-body: "Inter", Arial, Helvetica, sans-serif; */
+}

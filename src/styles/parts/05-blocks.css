@@ -1,0 +1,191 @@
+/* Blocchi a tutta larghezza: feature, percorso, contatti, footer.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+.pool {
+  position: relative;
+  height: 90svh;
+  min-height: 650px;
+  color: white;
+}
+
+.pool-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--shade-strong), transparent 70%),
+    linear-gradient(0deg, var(--shade-soft), transparent 55%);
+}
+
+.pool-copy {
+  position: absolute;
+  left: max(5vw, 32px);
+  bottom: 11%;
+  max-width: 720px;
+}
+
+.pool-copy h2 {
+  margin-bottom: 22px;
+  font:
+    400 clamp(55px, 6.5vw, 96px)/0.94 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.pool-copy > p:last-child {
+  max-width: 470px;
+  font:
+    18px/1.6 var(--font-display);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.trail {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 800px;
+  background: var(--deep);
+  color: #fff;
+}
+
+.trail-image {
+  position: relative;
+}
+
+.trail-copy {
+  padding: 8vw 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.big-number {
+  font:
+    clamp(110px, 13vw, 210px)/0.7 var(--font-display);
+  color: var(--lime);
+  letter-spacing: -0.09em;
+}
+
+.big-number small {
+  font-size: 0.22em;
+  letter-spacing: 0;
+  margin-left: 10px;
+}
+
+.trail-copy .eyebrow {
+  margin-top: 80px;
+}
+
+.trail-copy h2 {
+  font:
+    400 clamp(45px, 4.6vw, 72px)/0.98 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.trail-copy > p:not(.eyebrow) {
+  max-width: 500px;
+  color: rgba(255, 255, 255, 0.68);
+  font:
+    16px/1.65 var(--font-display);
+}
+
+.trail-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+}
+
+.trail-line i {
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 760px;
+  background: var(--forest);
+  color: #fff;
+}
+
+.contact-image {
+  position: relative;
+}
+
+.contact-copy {
+  padding: 10vw 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-copy h2 {
+  margin-bottom: 25px;
+  font:
+    400 clamp(55px, 6vw, 94px)/0.92 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.contact-copy > p:not(.eyebrow) {
+  max-width: 520px;
+  font:
+    17px/1.6 var(--font-display);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  margin: 32px 0 65px;
+}
+
+.ghost {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.contact address {
+  font:
+    normal 11px/1.7 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 34px max(5vw, 32px);
+  background: var(--panel-deep);
+  color: #fff;
+}
+
+footer p,
+footer a,
+footer button {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.5;
+}
+
+footer > div {
+  display: flex;
+  gap: 20px;
+}
+
+footer button {
+  border: 0;
+  background: none;
+  color: var(--lime);
+  cursor: pointer;
+}

@@ -1,0 +1,174 @@
+/* Rifiniture su nitidezza delle immagini e mappa su telefono.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+/* Final client review — crisp imagery,
+visible trail and responsive map routes */
+.trail-image {
+  isolation: isolate;
+  min-height: 800px;
+  background: var(--panel-deep);
+}
+
+.trail-image:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 54%, rgba(9, 20, 14, 0.28));
+  pointer-events: none;
+}
+
+.trail-main-photo {
+  z-index: 0;
+  object-position: center 52%;
+  transform: none;
+}
+
+.trail-detail {
+  z-index: 2;
+}
+
+.contact-photo {
+  object-position: center 48%;
+  transform: none;
+}
+
+.map-route {
+  top: 46%;
+  left: 45%;
+  opacity: 0.82;
+}
+
+.map-route-mobile {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+.trail-image {
+    min-height: 0;
+    height: 75vw;
+  }
+}
+
+@media (max-width: 800px) {
+.map-route-desktop {
+    display: none;
+  }
+.map-route-mobile {
+    display: block;
+  }
+.map-route {
+    top: 46%;
+    left: 45%;
+    opacity: 0.72;
+  }
+.stay-chapter-main .cover,
+.stay-chapter-detail .cover {
+    transform: none;
+  }
+.contact-image {
+    height: 78vw;
+    min-height: 310px;
+  }
+.contact-photo {
+    object-position: center 51%;
+  }
+}
+
+/* Keep responsive <picture> wrappers as the positioning context for fill images. */
+.stay-chapter-main > picture,
+.stay-chapter-detail > picture,
+.detail-hero > picture,
+.detail-gallery figure > picture {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+.trail-image {
+    height: 100vw;
+    min-height: 360px;
+  }
+.trail-image:after {
+    background: linear-gradient(0deg, rgba(9, 20, 14, 0.32), transparent 58%);
+  }
+.trail-main-photo {
+    object-position: center 58%;
+  }
+}
+
+.stays-track {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 800px) {
+.stays-heading h2 {
+    font-size: clamp(40px, 11.2vw, 52px);
+  }
+.stays-track {
+    gap: 12px;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 18px;
+  }
+.stay-chapter {
+    flex-basis: min(86vw, 420px);
+    scroll-snap-stop: always;
+  }
+.stay-chapter-media {
+    height: min(61svh, 560px);
+    min-height: 440px;
+  }
+.stay-chapter-main {
+    right: 6%;
+  }
+.stay-chapter-detail {
+    width: 43%;
+    height: 32%;
+    box-shadow: 0 16px 34px rgba(18, 31, 24, 0.16);
+  }
+.stay-chapter-copy h3 {
+    font-size: clamp(45px, 13vw, 61px);
+  }
+.stay-description {
+    min-height: 0;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.58;
+  }
+.stay-layout {
+    min-height: 31px;
+    line-height: 1.55;
+  }
+.stays-progress {
+    margin-top: 8px;
+  }
+.stays-progress span {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+.stays-heading {
+    align-items: flex-start;
+  }
+.stays-heading h2 {
+    font-size: 10.8vw;
+  }
+.stays-count {
+    padding-top: 4px;
+  }
+.stays-count b {
+    font-size: 26px;
+  }
+.stay-chapter-media {
+    min-height: 410px;
+  }
+.stay-chapter-copy h3 {
+    font-size: 12.5vw;
+  }
+}

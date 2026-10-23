@@ -1,0 +1,475 @@
+/* Adattamenti a tablet e telefono delle sezioni precedenti.
+   Attenzione: l'ordine dei file elencati in src/styles/site.css è
+   significativo. Alcune regole in coda sovrascrivono di proposito
+   regole dei file precedenti. */
+
+@media (max-width: 1080px) {
+.site-header {
+    grid-template-columns: 1fr auto;
+  }
+.desktop-nav {
+    display: none;
+  }
+.menu-button {
+    display: block;
+  }
+.trail {
+    grid-template-columns: 1fr;
+  }
+.trail-image {
+    height: 75vw;
+  }
+.contact {
+    grid-template-columns: 1fr;
+  }
+.contact-image {
+    height: 65vw;
+  }
+.contact-copy {
+    padding: 90px 7vw;
+  }
+}
+
+@media (max-width: 700px) {
+.site-header,
+.hero-content {
+    width: calc(100% - 36px);
+  }
+.site-header {
+    padding: 15px 0;
+  }
+.brand img {
+    width: 36px;
+    height: 36px;
+  }
+.brand small {
+    font-size: 8px;
+  }
+.brand b {
+    font-size: 19px;
+  }
+.header-cta,
+.lang {
+    display: none;
+  }
+.hero-shade {
+    background: linear-gradient(
+      0deg,
+      var(--hero-shade-bottom),
+      var(--hero-shade-clear) 65%,
+      var(--hero-shade-top)
+    );
+  }
+.hero-content {
+    min-height: calc(100svh - 68px);
+    padding: 120px 0 125px;
+  }
+.hero-label {
+    margin-bottom: 18px;
+    font-size: 8px;
+  }
+.hero h1 {
+    font-size: clamp(56px, 16.3vw, 76px);
+    line-height: 0.88;
+    max-width: 100%;
+  }
+.hero-lower {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 23px;
+  }
+.hero-intro {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+.hero-discover i {
+    width: 42px;
+    height: 42px;
+  }
+.hero-foot {
+    right: 18px;
+    left: 18px;
+    bottom: 16px;
+  }
+.hero-pillars {
+    display: none;
+  }
+.pool {
+    min-height: 620px;
+    height: 80svh;
+  }
+.trail {
+    min-height: 0;
+  }
+.trail-copy {
+    padding: 90px 20px;
+  }
+.trail-copy .eyebrow {
+    margin-top: 65px;
+  }
+.contact-image {
+    height: 75vw;
+  }
+.contact-actions {
+    flex-direction: column;
+  }
+.contact-actions .button {
+    width: 100%;
+  }
+footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+footer > div {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 800px) {
+.stays-journey {
+    height: auto !important;
+    padding: 90px 0 80px;
+  }
+.stays-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+.stays-heading {
+    position: relative;
+    align-items: flex-start;
+    padding: 0 18px 55px;
+    background: none;
+  }
+.stays-heading h2 {
+    max-width: 84%;
+    font-size: 12vw;
+  }
+.stays-count {
+    position: sticky;
+    top: 18px;
+    z-index: 5;
+    padding: 8px 10px;
+    background: rgba(243, 239, 230, 0.86);
+    backdrop-filter: blur(8px);
+  }
+.stays-count b {
+    font-size: 25px;
+  }
+.stays-track {
+    position: relative;
+    top: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0 18px;
+    transform: none !important;
+  }
+.stay-chapter {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 115px;
+  }
+.stay-chapter-media {
+    height: 72svh;
+    min-height: 520px;
+    margin-bottom: 42px;
+  }
+.stay-chapter-main {
+    right: 8%;
+  }
+.stay-chapter-detail {
+    right: 0;
+    bottom: -3%;
+    width: 43%;
+    height: 34%;
+    border-width: 5px;
+  }
+.stay-chapter-copy {
+    padding: 0 5px;
+  }
+.stay-chapter-copy h3 {
+    font-size: 15vw;
+  }
+.stay-description {
+    max-width: 92%;
+    font-size: 16px;
+  }
+.stay-facts {
+    justify-content: space-between;
+  }
+.stay-link {
+    max-width: none;
+  }
+.stays-end {
+    width: 100%;
+    height: auto;
+    padding: 40px 0 80px;
+  }
+.stays-end p {
+    font-size: 17vw;
+  }
+.stays-progress {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+.story-stage {
+    height: 185vh;
+  }
+.story-sticky {
+    padding: 18px;
+  }
+.story-index {
+    top: 24px;
+    left: 18px;
+  }
+.story-ghost {
+    top: 43%;
+    font-size: 40vw;
+  }
+.story-title {
+    top: 11%;
+    right: 18px;
+    left: 18px;
+    font-size: 14.2vw;
+    line-height: 0.84;
+  }
+.story-title span:nth-child(2) {
+    margin-left: 5vw;
+  }
+.story-title em {
+    margin-left: 12vw;
+  }
+.story-stone {
+    top: 29%;
+    right: 18px;
+    left: 18px;
+    width: auto;
+    height: 39%;
+  }
+.story-stone .cover {
+    object-position: 53% 32%;
+  }
+.story-stone figcaption {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    font-size: 6px;
+    line-height: 1.45;
+  }
+.story-aerial {
+    top: 54%;
+    right: 8px;
+    bottom: auto;
+    left: auto;
+    width: 45%;
+    height: 16%;
+    border-width: 5px;
+  }
+.story-aerial span {
+    right: 6px;
+    bottom: 6px;
+    padding: 5px 6px;
+    font-size: 6px;
+  }
+.story-manifesto {
+    right: 18px;
+    bottom: 15%;
+    left: 18px;
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+.story-manifesto > span {
+    padding-top: 0;
+    font-size: 7px;
+  }
+.story-manifesto p {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.42;
+  }
+.story-cursor {
+    display: none;
+  }
+.detail-header {
+    grid-template-columns: 1fr auto;
+  }
+.detail-header > a:nth-child(2) {
+    display: none;
+  }
+.detail-hero {
+    height: 78svh;
+  }
+.detail-title h1 {
+    font-size: 17vw;
+  }
+.detail-intro {
+    grid-template-columns: 1fr;
+    padding: 75px 20px;
+  }
+.detail-intro > div {
+    border-top: 1px solid var(--line);
+    padding-top: 30px;
+  }
+.detail-gallery > div {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+.detail-gallery figure,
+.detail-gallery figure:nth-child(3n) {
+    grid-column: auto;
+    height: 115vw;
+  }
+.detail-cta {
+    padding: 100px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+    scroll-behavior: auto;
+  }
+.hero-video-local {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+.stays-count {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+.exp-intro {
+    min-height: 78svh;
+    padding: 85px 18px 110px;
+  }
+.exp-kicker {
+    margin-bottom: 21px;
+  }
+.exp-intro h2 {
+    font-size: 18vw;
+    line-height: 0.84;
+  }
+.exp-intro > p:not(.exp-kicker) {
+    max-width: 88%;
+    margin: 0;
+    font-size: 15px;
+  }
+.exp-marquee {
+    bottom: 3vh;
+    font-size: 18vw;
+  }
+.exp-card {
+    height: 92svh;
+    min-height: 620px;
+  }
+.exp-media .cover {
+    transform: scale(1.08);
+  }
+.exp-card-1 .exp-media .cover {
+    object-position: 57% center;
+  }
+.exp-card-2 .exp-media .cover {
+    object-position: 55% center;
+  }
+.exp-card-3 .exp-media .cover {
+    object-position: 48% center;
+  }
+.exp-veil {
+    background: linear-gradient(
+      0deg,
+      rgba(8, 8, 6, 0.88) 0%,
+      rgba(8, 8, 6, 0.22) 72%,
+      rgba(8, 8, 6, 0.42) 100%
+    );
+  }
+.exp-light {
+    display: none;
+  }
+.exp-word {
+    top: 15%;
+    right: -3vw;
+    font-size: 31vw;
+  }
+.exp-top {
+    top: 4%;
+    right: 18px;
+    left: 18px;
+  }
+.exp-top span:last-child {
+    max-width: 60%;
+    text-align: right;
+    line-height: 1.5;
+  }
+.exp-copy {
+    right: 18px;
+    bottom: 6%;
+    left: 18px;
+  }
+.exp-copy h3 {
+    font-size: 18vw;
+  }
+.exp-copy > p:nth-of-type(2) {
+    max-width: 94%;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+.exp-copy > a i {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 800px) {
+.territory-map {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    min-height: 0;
+    padding: 95px 18px;
+  }
+.territory-copy h2 {
+    font-size: 14vw;
+  }
+.territory-copy > p:not(.eyebrow) {
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+.map-canvas {
+    aspect-ratio: 0.78;
+  }
+.map-silhouette {
+    inset: 6% 0;
+  }
+.map-home {
+    top: 45%;
+    left: 44%;
+  }
+.map-home b {
+    font-size: 13px;
+  }
+.map-place b {
+    font-size: 13px;
+  }
+.map-route {
+    top: 45%;
+    left: 44%;
+  }
+.map-coordinate-y {
+    right: -2%;
+  }
+.map-key {
+    flex-wrap: wrap;
+    gap: 9px 16px;
+  }
+.map-key > small {
+    width: 100%;
+    margin-left: 0;
+  }
+}

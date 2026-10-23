@@ -1,0 +1,20 @@
+Media di nerbona
+================
+
+video/        hero-desktop.mp4 (1280x630), hero-mobile.mp4 (406x720 verticale),
+              hero-poster.webp. Ricavati dal video del canale YouTube della
+              struttura: tagliati per togliere titolo e filigrana, senza audio.
+estate/       foto della tenuta: aerea, paesaggio, piscine, La Casina
+extra/        aree comuni di Nerbona e della Casina (pagine delle due sedi)
+stays/        foto degli alloggi, <slug>-01.webp, <slug>-02.webp...
+experiences/  esperienze e attività
+services/     pagina Servizi
+weddings/     pagina Matrimoni
+trail/        sentiero Nerbona - La Casina
+contact/      foto del blocco contatti
+logo.svg      emblema (tre cipressi sul crinale)
+
+Le foto vengono da nerbona.com e sono larghe al massimo 1080 px: vanno bene
+nelle schede, ma a tutto schermo su monitor grandi si ammorbidiscono.
+Appena il cliente fornisce gli originali, mettili in prospects/nerbona/foto/
+e lancia  SITE_ID=nerbona npm run media:prepare

@@ -1,0 +1,35 @@
+{
+  "name": "agriturismo-platform",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:static": "node scripts/build-static.mjs",
+    "build:all": "node scripts/build-all.mjs",
+    "start": "next start",
+    "media:scan": "node scripts/scan-media.mjs",
+    "check": "tsc --noEmit",
+    "validate": "node scripts/validate.mjs",
+    "new:tenant": "node scripts/new-tenant.mjs",
+    "media:prepare": "node scripts/prepare-media.mjs",
+    "demo:build": "node scripts/build-demo.mjs",
+    "media:placeholders": "node scripts/make-placeholders.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "sharp": "^0.35.5",
+    "typescript": "5.9.3"
+  },
+  "type": "module"
+}

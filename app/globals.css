@@ -1,0 +1,4 @@
+/* Punto d'ingresso degli stili.
+   Il contenuto vero sta in src/styles/, diviso per blocchi.
+   Il tema del cliente lo carica app/layout.tsx, dopo questo file. */
+@import "../src/styles/site.css";

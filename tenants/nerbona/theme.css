@@ -1,0 +1,105 @@
+/* TEMA — Agriturismo Fattoria Nerbona
+   ===================================
+   Sovrascrive i valori di partenza definiti in src/styles/tokens.css.
+   Viene caricato dopo, quindi vince.
+
+   Palette di terra: il marrone dei coppi e delle travi per i fondi scuri,
+   l'ocra della pietra per l'accento, il grano per i fondi chiari. Le Ville
+   gioca sul verde; Nerbona sul caldo.
+
+   I font sono ospitati insieme al sito (cartella fonts/ qui accanto), non
+   caricati da Google Fonts: nessuna richiesta a servizi esterni, coerente con
+   un sito senza cookie di terze parti. Licenza SIL OFL, vedi fonts/OFL-*.txt. */
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("./fonts/manrope-latin-wght-normal.woff2") format("woff2");
+}
+
+:root {
+  /* --- Colori ------------------------------------------------------ */
+
+  --ink: #2a1f18;
+  --forest: #4a3426;
+  --deep: #2c2018;
+  --panel: #362a20;
+  --panel-deep: #1e1611;
+
+  --cream: #f3ebdf;
+  --paper: #fbf7f0;
+
+  /* Ocra della pietra: bottoni, indicatori, dettagli */
+  --lime: #dca66a;
+  --on-lime: #2a1f18;
+
+  --line: rgba(42, 31, 24, 0.16);
+  --rule: #b08a66;
+
+  --muted: #6a5a4d;
+  --muted-soft: #8b7867;
+
+  --hero-bg: #2c2018;
+  --story-bg: #231912;
+  --stays-bg: #f1e8da;
+  --stays-bg-fade: rgba(241, 232, 218, 0);
+  --territory-bg: #e7dcc6;
+  --forest-hover: #3a291e;
+  --dock-panel: #f7f0e5;
+  --dock-bg: rgba(36, 26, 19, 0.94);
+
+  --shade-strong: rgba(28, 18, 11, 0.62);
+  --shade-soft: rgba(24, 15, 9, 0.45);
+  --hero-shade-bottom: rgba(22, 14, 8, 0.82);
+  --hero-shade-clear: rgba(22, 14, 8, 0.05);
+  --hero-shade-top: rgba(22, 14, 8, 0.5);
+
+  --exp-bg: #1b1410;
+  --exp-intro-bg: #211812;
+  --exp-kicker: #dca66a;
+  --exp-accent: #e8c38f;
+  --exp-on-accent: #2a1f18;
+  --exp-card-1: #7a4a2e; /* terracotta */
+  --exp-card-2: #4d5636; /* ulivo */
+  --exp-card-3: #5b3534; /* vino */
+
+  /* --- Tipografia -------------------------------------------------- */
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", Arial, Helvetica, sans-serif;
+}
+
