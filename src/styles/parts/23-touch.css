@@ -1,0 +1,52 @@
+/* Aree toccabili su telefono. Le linee guida chiedono almeno 44 px: sui
+   link di testo piccoli (piè di pagina, "Scopri", recapiti) si allarga
+   l'area con padding, senza cambiare l'aspetto. Caricato per ultimo. */
+
+@media (max-width: 700px) {
+  .menu-button {
+    width: 44px;
+    height: 44px;
+    padding: 0 7px;
+  }
+
+  footer > div {
+    gap: 4px 18px;
+  }
+
+  footer > div a,
+  footer > div button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  .card-link,
+  .unit-ask,
+  .prose-links a,
+  .detail-header button,
+  .detail-back,
+  .legal-header button,
+  .legal-back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .legal-back {
+    min-width: 44px;
+  }
+
+  .legal-aside a,
+  .legal-body li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  .unit-ask {
+    padding-bottom: 0;
+    border-bottom: 0;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}

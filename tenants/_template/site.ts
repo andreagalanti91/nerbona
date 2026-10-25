@@ -203,7 +203,7 @@ const site: SiteConfig = {
     {
       type: "territory",
       id: "territorio",
-      kicker: "TODO",
+      kicker: { it: "TODO", en: "TODO" },
       title: { it: "TODO", en: "TODO" },
       text: { it: "TODO", en: "TODO" },
       disclaimer: {

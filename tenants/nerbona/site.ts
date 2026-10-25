@@ -61,6 +61,10 @@ const WIFI_OUT: Localized = {
   it: "Wi-Fi nelle zone comuni, all'esterno dell'alloggio",
   en: "Wi-Fi in the shared areas, outside the apartment",
 };
+/* Pulsanti dei blocchi contatti, uguali in tutte le pagine. */
+const WHATSAPP_LABEL: Localized = { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" };
+const EMAIL_LABEL: Localized = { it: "Scrivici una email", en: "Email us" };
+
 const NETS: Localized = { it: "Zanzariere", en: "Mosquito nets" };
 const ACCESSIBLE: Localized = {
   it: "Adatto a sedia a rotelle",
@@ -103,7 +107,7 @@ const site: SiteConfig = {
       en: "Agriturismo Fattoria Nerbona | Colle di Val d'Elsa, Tuscany",
     },
     description: {
-      it: "Venti appartamenti in antiche case rurali, due strutture e due piscine nella campagna senese, tra Siena e Firenze.",
+      it: "Venti alloggi in antiche case rurali, due strutture e due piscine nella campagna senese, tra Siena e Firenze.",
       en: "Twenty apartments in old farm buildings, two sites and two pools in the Sienese countryside, between Siena and Florence.",
     },
     ogImage: "estate/aerial.webp",
@@ -173,20 +177,20 @@ const site: SiteConfig = {
         poster: "video/hero-poster.webp",
       },
       labelParts: [
+        { it: "Agriturismo", en: "Farm stay" },
         { it: "Colle di Val d'Elsa", en: "Colle di Val d'Elsa" },
-        { it: "Tra Siena e Firenze", en: "Between Siena and Florence" },
       ],
       titleLines: [
-        { it: "Due case nella", en: "Two homes in the" },
-        { it: "campagna senese.", en: "Sienese countryside." },
+        { it: "Tra Siena e Firenze,", en: "Between Siena and Florence," },
+        { it: "dove il tempo rallenta.", en: "where time slows down." },
       ],
       intro: {
-        it: "Venti appartamenti ricavati da antiche strutture rurali, due piscine e il silenzio delle colline toscane.",
-        en: "Twenty apartments carved from old farm buildings, two pools and the quiet of the Tuscan hills.",
+        it: "Venti alloggi nelle antiche case coloniche della fattoria, due piscine e seicento ettari di campagna tutto intorno.",
+        en: "Twenty homes in the farm's old buildings, two pools and six hundred hectares of countryside all around.",
       },
       cta: {
-        label: { it: "Scopri la tenuta", en: "Discover the estate" },
-        href: "#tenuta",
+        label: { it: "Scopri gli appartamenti", en: "See the apartments" },
+        href: "#sistemazioni",
       },
       pillars: [
         { it: "Due strutture · due piscine", en: "Two sites · two pools" },
@@ -202,10 +206,10 @@ const site: SiteConfig = {
       numberLabel: { it: "LA TENUTA", en: "THE ESTATE" },
       ghost: "NERBONA",
       titleLines: [
-        { it: "Tra Siena e Firenze,", en: "Between Siena and Florence," },
-        { it: "dove il tempo", en: "where time" },
+        { it: "Seicento ettari", en: "Six hundred hectares" },
+        { it: "di campagna", en: "of Sienese" },
       ],
-      titleEmphasis: { it: "rallenta.", en: "slows down." },
+      titleEmphasis: { it: "senese.", en: "countryside." },
       mainImage: {
         src: "estate/landscape.webp",
         alt: {
@@ -247,8 +251,8 @@ const site: SiteConfig = {
         en: "Twenty homes, two sites, one landscape.",
       },
       text: {
-        it: "Ogni appartamento ha un nome, quello dell'edificio rurale da cui è stato ricavato, una cucina attrezzata e uno spazio esterno privato.",
-        en: "Every apartment has a name, that of the farm building it was carved from, an equipped kitchen and a private outdoor space.",
+        it: "Ogni alloggio ha un nome proprio, spesso quello dell'edificio rurale da cui è nato: la mangiatoia, il granaio, il forno.",
+        en: "Every home has a name of its own, often that of the farm building it came from: the manger, the granary, the bakehouse.",
       },
       tabs: [
         {
@@ -326,8 +330,8 @@ const site: SiteConfig = {
       id: "giornate",
       kicker: { it: "GIORNATE A NERBONA", en: "DAYS AT NERBONA" },
       title: {
-        it: "Tutto quello che serve per non ripartire.",
-        en: "Everything you need to stay put.",
+        it: "Tutto quello che serve per ripartire.",
+        en: "Everything you need to recharge.",
       },
       intro: {
         it: "Acqua, sentieri e tavole all'aperto, a pochi passi dalla porta di casa.",
@@ -337,7 +341,7 @@ const site: SiteConfig = {
         it: "PISCINE · SENTIERI · BARBECUE · BOSCO · GIOCO · ",
         en: "POOLS · TRAILS · BARBECUE · WOODS · PLAY · ",
       },
-      itemLabel: { it: "GIORNATA", en: "DAY" },
+      itemLabel: { it: "TEMPO LIBERO", en: "LEISURE" },
       ctaLabel: { it: "Tutti i servizi", en: "All services" },
       ctaHref: "/servizi",
       items: [
@@ -420,8 +424,8 @@ const site: SiteConfig = {
       tone: "dark",
       kicker: { it: "Oltre il soggiorno", en: "Beyond your stay" },
       title: {
-        it: "Esperienze, feste e la Toscana intorno.",
-        en: "Experiences, celebrations and the Tuscany around you.",
+        it: "Esperienze, matrimoni e la Toscana intorno.",
+        en: "Experiences, weddings and the Tuscany around you.",
       },
       items: [
         {
@@ -519,10 +523,10 @@ const site: SiteConfig = {
     {
       type: "territory",
       id: "territorio",
-      kicker: "Heart of Tuscany",
+      kicker: { it: "Nel cuore della Toscana", en: "Heart of Tuscany" },
       title: {
-        it: "Fra Siena e Firenze, senza dover scegliere.",
-        en: "Between Siena and Florence, without having to choose.",
+        it: "Tutta la Toscana, senza dover scegliere.",
+        en: "All of Tuscany, without having to choose.",
       },
       text: {
         it: "Colle di Val d'Elsa a pochi minuti, San Gimignano e Volterra a mezz'ora, le due città d'arte a meno di un'ora.",
@@ -621,14 +625,11 @@ const site: SiteConfig = {
         en: "We look forward to welcoming you.",
       },
       text: {
-        it: "Disponibilità e prezzi si vedono in tempo reale sul nostro sistema di prenotazione. Per gruppi, matrimoni o domande sugli alloggi scriveteci: Elena e Cristina vi rispondono direttamente.",
-        en: "Availability and prices are live on our booking system. For groups, weddings or questions about the apartments, write to us: Elena and Cristina reply in person.",
+        it: "Disponibilità e prezzi sono aggiornati in tempo reale: si prenota online in pochi passi. Per gruppi, matrimoni o domande sugli alloggi scriveteci, Elena e Cristina vi rispondono di persona.",
+        en: "Availability and prices are live: you can book online in a few steps. For groups, weddings or questions about the apartments, write to us and Elena and Cristina will reply in person.",
       },
-      whatsappLabel: {
-        it: "Scrivici su WhatsApp",
-        en: "Message us on WhatsApp",
-      },
-      emailLabel: { it: "Invia una email", en: "Send us an email" },
+      whatsappLabel: WHATSAPP_LABEL,
+      emailLabel: EMAIL_LABEL,
     },
   ],
 
@@ -776,8 +777,8 @@ const site: SiteConfig = {
             it: "Prenotate online o scriveteci: vi aiutiamo a trovare l'appartamento della misura giusta.",
             en: "Book online or write to us: we'll help you find the right-sized apartment.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -930,15 +931,15 @@ const site: SiteConfig = {
           },
           kicker: { it: "Soggiornare alla Casina", en: "Staying at La Casina" },
           title: {
-            it: "Cinque appartamenti, prenotateli per tempo.",
+            it: "Solo cinque appartamenti: prenotate per tempo.",
             en: "Only five apartments: book early.",
           },
           text: {
             it: "Per un gruppo fino a 24 persone si può prenotare l'intera struttura: scriveteci.",
             en: "Groups of up to 24 can book the whole site: write to us.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -1176,8 +1177,8 @@ const site: SiteConfig = {
             it: "Per esigenze particolari, animali, arrivi tardi o gruppi scriveteci prima di prenotare.",
             en: "For special requests, pets, late arrivals or groups, write to us before booking.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -1356,8 +1357,8 @@ const site: SiteConfig = {
             it: "Diteci le date e cosa vi piacerebbe fare: vi mettiamo in contatto con le persone giuste.",
             en: "Tell us your dates and what you'd like to do: we'll put you in touch with the right people.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -1509,8 +1510,8 @@ const site: SiteConfig = {
             it: "Scriveteci la data e il numero di invitati: vi rispondiamo con la disponibilità e una proposta.",
             en: "Send us the date and number of guests: we'll reply with availability and a proposal.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -1660,7 +1661,7 @@ const site: SiteConfig = {
         {
           type: "territory",
           id: "territorio",
-          kicker: "Heart of Tuscany",
+          kicker: { it: "Nel cuore della Toscana", en: "Heart of Tuscany" },
           title: { it: "Tutto a meno di un'ora.", en: "Everything within the hour." },
           text: {
             it: "Borghi medievali, città d'arte e le colline del Chianti: le distanze da Nerbona.",
@@ -1702,8 +1703,8 @@ const site: SiteConfig = {
             it: "Vi diamo volentieri qualche consiglio su cosa vedere, a seconda dei giorni che avete.",
             en: "We're happy to suggest what to see, depending on how many days you have.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -1871,8 +1872,8 @@ const site: SiteConfig = {
             it: "Prenotate online o scriveteci per qualsiasi domanda.",
             en: "Book online or write to us with any question.",
           },
-          whatsappLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
-          emailLabel: { it: "Invia una email", en: "Send us an email" },
+          whatsappLabel: WHATSAPP_LABEL,
+          emailLabel: EMAIL_LABEL,
         },
       ],
     },
@@ -2723,7 +2724,7 @@ const site: SiteConfig = {
       it: "Questa potrebbe essere la vostra estate.",
       en: "This could be your summer.",
     },
-    ctaLabel: { it: "Scrivici su WhatsApp", en: "Message us on WhatsApp" },
+    ctaLabel: WHATSAPP_LABEL,
   },
 
   dock: {

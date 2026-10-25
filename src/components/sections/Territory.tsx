@@ -43,7 +43,7 @@ export function Territory({ section }: { section: TerritorySection }) {
   return (
     <section className="territory-map tmap-section" id={section.id}>
       <div className="territory-copy">
-        <p className="eyebrow">{section.kicker}</p>
+        <p className="eyebrow">{t(section.kicker)}</p>
         <h2>{t(section.title)}</h2>
         <p>{t(section.text)}</p>
 

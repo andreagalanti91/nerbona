@@ -289,7 +289,7 @@ export interface Destination {
 export interface TerritorySection {
   type: "territory";
   id: string;
-  kicker: string;
+  kicker: Localized;
   title: Localized;
   text: Localized;
   disclaimer: Localized;

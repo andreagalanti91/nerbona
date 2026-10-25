@@ -61,3 +61,6 @@
 
 /* 13. Mappa delle distanze radiale. */
 @import "./parts/22-territory.css";
+
+/* 14. Aree toccabili su telefono. */
+@import "./parts/23-touch.css";
